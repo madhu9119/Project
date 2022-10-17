@@ -1,0 +1,77 @@
+body {
+  background: #000;
+}
+.navbar{
+  background: rgb(229, 233, 13);
+}
+.sidebar {
+  width: 500px;
+  padding: 10px;
+  float: right;
+  background: rgb(55, 99, 139);
+  color:rgb(20, 20, 20);
+}
+h1 {
+  color: #07f523;
+  text-align: center;
+}
+#date {
+  color:#36f750;
+  font-size: 30px;
+  font-style: italic;
+}
+#bdysize {
+  font-size: large;
+  color: aliceblue;
+}
+#jkn {
+  color: rgb(41, 41, 202);
+  font-size: 15px;
+  font-style: italic;
+}
+#tags {
+  color: red;
+  font-size: 20px;
+}
+a {
+  color:white;
+}
+.madhublog {
+  color: #6ed112;
+}
+.posttag {
+  color: #c322f0;
+}
+#title {
+  color:#da19e0;
+}
+#linebreaks {
+  color:#1dc471;
+  font-size: 25px;
+}
+#comment {
+  color: #21edcb;
+}
+#please {
+  color: #ed670e;
+}
+#added {
+  color: #2e45f2;
+}
+#only {
+  color: white;
+  font-size: 15px;
+}
+#nimbda {
+  color: #07f523;
+  font-size: 15px;
+}
+#pnayy {
+  font-size: 20px;
+  font-weight: bold;
+}
+#navbar-brand {
+  width: 500px;
+  height: 100px;
+  background-color: powderblue;
+}

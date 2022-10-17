@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load blog_tags%}
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>{%block title_block%}{%endblock%}</title>
+  </head>
+  <link rel="stylesheet" href="{% static "css/blog.css"%}">
+  <body>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Updated Articles</a>
+    </div>
+    <ul class="nav navbar-nav" style="color: rgb(162, 0, 255);">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">SERVIES</a></li>
+      <li><a href="#">CONTENETS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="content">
+      {%block contain%}
+      {%endblock%}
+    </div>
+    <div class="sidebar">
+      <h2>Madhu blog posts</h2>
+      <p>The total number of published posts up to date:<span id="pnayy">{% my_tag %}</span></p>
+      <h3>Latest posts:</h3>{%show_latest_posts 4%}
+      <h3>Most commented posts:</h3>
+      {%get_most_comment_posts as most_comment_posts%}
+      <ul>
+        {%for post in most_comment_posts%}
+        <li><a href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+        {%endfor%}
+      </ul>
+    </div>
+  </body>
+</html>

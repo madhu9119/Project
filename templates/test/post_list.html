@@ -1,0 +1,20 @@
+{%extends 'test/base.html'%}
+{%block title_block%}Madhu's Blog Home{%endblock%}
+      {%block contain%}
+      <h1 class="madhublog">Madhu Blog's</h1>
+        {%if tag%}
+          <h1 class="posttag">Post tagged with '{{tag.name}}'</h1>
+        {%endif%}
+          {% for post in post_list %}
+            <a href="{{post.get_absolute_url}}"><h2>{{post.title}}</h2></a>
+            <p id="date">published on {{post.publish}} by {{post.author|title}}</p>
+            <p id="tags">Taggs:
+                {%for tag in post.tags.all%}
+                <a href="{% url 'post_list_by_tag_name' tag.slug %}" class="btn btn-primary btn-sm">{{tag.name}}</a>
+                {%if not forloop.last%}{%endif%}#
+                {%endfor%}
+            </p>
+            <p id="linebreaks">{{post.body|truncatewords:30|linebreaks}}</p>
+          {%endfor%}
+          {% include 'test/pagination.html' with page=post_list %}
+      {%endblock%}
